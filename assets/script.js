@@ -17,12 +17,20 @@ const slides = [
 	}
 ];
 
-/*
-
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
-
 const dots = document.querySelectorAll(".dot");
+
+leftArrow.addEventListener('click', myFunction);
+rightArrow.addEventListener('click', myFunction);
+
+
+function myFunction() {
+	alert ("Hello World!");
+  }
+
+  
+/*
 
 leftArrow.addEventListener("click", (event) => {});
 rightArrow.addEventListener("click", (event) => {});
