@@ -38,11 +38,17 @@ function myFunction() {
 
   
 /*
+flèche droite :
+function showNextSlides() {
+	currentSlide = (currentSlide + 1)
+
+flèche gauche: 
+functionshowPreviousSlides() {
+	currentSlide = (currentSlide - 1 + 
+
 leftArrow.addEventListener("click", (event) => {});
 rightArrow.addEventListener("click", (event) => {});
 
-function ///() {
-  /// ;
 }
 */ 
 
