@@ -22,12 +22,14 @@ const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dot");
 
+const bannerText = banner.querySelector("p");
+
 
 /* Functions, arrows */
 leftArrow.addEventListener('click', myFunction);
 rightArrow.addEventListener('click', myFunction);
 
-/* EventListener, arrows */
+/* EventListener, arrows, provisoire */
 function myFunction() {
 	alert ("Hello World!");
   }
