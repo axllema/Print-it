@@ -34,6 +34,10 @@ function myFunction() {
 	alert ("Hello World!");
   }
 
+  console.log(myFunction)
+
+  
+
 
 
   
@@ -43,7 +47,7 @@ function showNextSlides() {
 	currentSlide = (currentSlide + 1)
 
 flèche gauche: 
-functionshowPreviousSlides() {
+function showPreviousSlides() {
 	currentSlide = (currentSlide - 1 + 
 
 leftArrow.addEventListener("click", (event) => {});
