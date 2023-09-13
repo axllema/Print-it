@@ -17,15 +17,16 @@ const slides = [
 	}
 ];
 
+let currentSlide = 0; 
+
 /* Elements */
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dot");
-
 const bannerText = banner.querySelector("p");
 
 
-/* Functions, arrows */
+/* Functions, arrows provisoires */
 leftArrow.addEventListener('click', myFunction);
 rightArrow.addEventListener('click', myFunction);
 
@@ -35,23 +36,24 @@ function myFunction() {
   }
 
   console.log(myFunction)
-
   
 
-
-
   
-/*
-flèche droite :
-function showNextSlides() {
-	currentSlide = (currentSlide + 1)
-
-flèche gauche: 
-function showPreviousSlides() {
-	currentSlide = (currentSlide - 1 + 
-
-leftArrow.addEventListener("click", (event) => {});
-rightArrow.addEventListener("click", (event) => {});
+/* 
+  leftArrow.addEventListener('click', showNextSlides);
+  rightArrow.addEventListener('click', showLastSlides);
+  
+  function showNextSlides() {
+	  currentSlide = (currentSlide + 1) % slides.length; //"%" is used to manage the carousel loop
+	  bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+	  bannerText.innerHTML = slides[currentSlide].tagLine;
+  }
+	
+function showLastSlides() {
+	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+	bannerText.innerHTML = slides[currentSlide].tagLine;
+  }
 
 }
 */ 
