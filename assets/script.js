@@ -1,3 +1,10 @@
+/* Elements */
+const leftArrow = document.querySelector(".arrow_left");
+const rightArrow = document.querySelector(".arrow_right");
+const dots = document.querySelectorAll(".dot");
+const bannerText = banner.querySelector("p");
+const bannerSlide = document.getElementById("banner-slide");
+
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -19,42 +26,67 @@ const slides = [
 
 let currentSlide = 0; 
 
-/* Elements */
-const leftArrow = document.querySelector(".arrow_left");
-const rightArrow = document.querySelector(".arrow_right");
-const dots = document.querySelectorAll(".dot");
-const bannerText = banner.querySelector("p");
+
+/* Functions, arrows */
+leftArrow.addEventListener('click', showNext);
+rightArrow.addEventListener('click', showPrev);
 
 
-/* Functions, arrows provisoires */
-leftArrow.addEventListener('click', myFunction);
-rightArrow.addEventListener('click', myFunction);
+/* EventListener, arrows */
+function showNext() {
+	currentSlide = (currentSlide + 1) % slides.length; //"%" is used to manage the carousel loop
+	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+	bannerText.innerHTML = slides[currentSlide].tagLine;
+}
+  
+function showPrev() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+  bannerText.innerHTML = slides[currentSlide].tagLine;
+}
 
-/* EventListener, arrows, provisoire */
-function myFunction() {
-	alert ("Hello World!");
-  }
-
-  console.log(myFunction)
+  console.log(showNext)
   
 
   
 /* 
-  leftArrow.addEventListener('click', showNextSlides);
-  rightArrow.addEventListener('click', showLastSlides);
-  
-  function showNextSlides() {
-	  currentSlide = (currentSlide + 1) % slides.length; //"%" is used to manage the carousel loop
-	  bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
-	  bannerText.innerHTML = slides[currentSlide].tagLine;
-  }
-	
-function showLastSlides() {
-	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
-	bannerText.innerHTML = slides[currentSlide].tagLine;
-  }
 
+function reset() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i];
+  }
 }
+
+function startSlide() {
+  reset();
+  slides[0];
+}
+
+leftArrow.addEventListener("click", function() {
+  if (currentSlide === 0) {
+    currentSlide = slides.length;
+  }
+  showPrev;
+});
+
+rightArrow.addEventListener("click", function() {
+  if (currentSlide === slides.length - 1) {
+    currentSlide = -1;
+  }
+  showNext();
+});
+
+function showPrev() {
+	reset();
+	slides[currentSlide - 1];
+	currentSlide--;
+  }
+  
+  function showNext() {
+	reset();
+	slides[currentSlide + 1];
+	currentSlide++;
+  }
+  
 */ 
 
