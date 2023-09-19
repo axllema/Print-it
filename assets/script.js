@@ -24,23 +24,26 @@ const slides = [
 	}
 ];
 
-let currentSlide = 0; 
+let index = 0;
 
 
-/* Functions, arrows */
-leftArrow.addEventListener('click', showNext);
-rightArrow.addEventListener('click', showPrev);
+/* Function, dots */
 
 
 /* EventListener, arrows */
+leftArrow.addEventListener('click', showNext);
+rightArrow.addEventListener('click', showPrev);
+
 function showNext() {
-	currentSlide = (currentSlide + 1) % slides.length; //"%" is used to manage the carousel loop
-	bannerText.innerHTML = slides[currentSlide].tagLine;
+	index = (index + 1) % slides.length; //"%" used to manage the carousel loop
+	bannerText.innerHTML = slides[index].tagLine;
+	bannerSlide.src = "./assets/images/slideshow/" + slides[index].image;
 }
   
 function showPrev() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  bannerText.innerHTML = slides[currentSlide].tagLine;
+  index = (index- 1 + slides.length) % slides.length;
+  bannerText.innerHTML = slides[index].tagLine;
+  bannerSlide.src = "./assets/images/slideshow/" + slides[index].image;
 }
 
   console.log(showNext)
