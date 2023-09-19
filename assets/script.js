@@ -35,13 +35,11 @@ rightArrow.addEventListener('click', showPrev);
 /* EventListener, arrows */
 function showNext() {
 	currentSlide = (currentSlide + 1) % slides.length; //"%" is used to manage the carousel loop
-	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
 	bannerText.innerHTML = slides[currentSlide].tagLine;
 }
   
 function showPrev() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
   bannerText.innerHTML = slides[currentSlide].tagLine;
 }
 
@@ -50,6 +48,17 @@ function showPrev() {
 
   
 /* 
+
+
+
+function show next : 
+	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+function show prev : 
+ bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+
+
+
+	///
 
 function reset() {
   for (let i = 0; i < slides.length; i++) {
