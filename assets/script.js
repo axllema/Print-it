@@ -24,26 +24,25 @@ const slides = [
 	}
 ];
 
-let index = 0;
-
-
-/* Function, dots */
+let currentSlide = 0;
 
 
 /* EventListener, arrows */
-leftArrow.addEventListener('click', showNext);
-rightArrow.addEventListener('click', showPrev);
+leftArrow.addEventListener('click', showPrev);
+rightArrow.addEventListener('click', showNext);
 
 function showNext() {
-	index = (index + 1) % slides.length; //"%" used to manage the carousel loop
-	bannerText.innerHTML = slides[index].tagLine;
-	bannerSlide.src = "./assets/images/slideshow/" + slides[index].image;
+	currentSlide = (currentSlide + 1) % slides.length; //"%" used to manage the carousel loop
+	bannerText.innerHTML = slides[currentSlide].tagLine;
+	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+	activeDot();
 }
   
 function showPrev() {
-  index = (index- 1 + slides.length) % slides.length;
-  bannerText.innerHTML = slides[index].tagLine;
-  bannerSlide.src = "./assets/images/slideshow/" + slides[index].image;
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  bannerText.innerHTML = slides[currentSlide].tagLine;
+  bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+  activeDot();
 }
 
   console.log(showNext)
