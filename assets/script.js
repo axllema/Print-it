@@ -30,9 +30,9 @@ activeDot() // dot selected at first
 /* Function, dots */
 function activeDot() {
 	dots.forEach((dot, index) => {
-	/* "forEach", calls a function for each element in an array -
-	goes through each bullet point and removes the "dot_selected" class. */ 
 		dot.classList.remove("dot_selected");
+		/* "forEach", calls a function for each element in an array -
+		goes through each bullet point and removes the "dot_selected" class. */ 
 		if (index === currentSlide) {
 			dot.classList.add("dot_selected");
 			/* "changes the class of the bullet point corresponding
