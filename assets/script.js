@@ -25,10 +25,10 @@ const slides = [
 ];
 
 let currentSlide = 0;
-activeDot() // dot selected at first
+updateActiveDot() // dot selected at first
 
 /* Function, dots */
-function activeDot() {
+function updateActiveDot() {
 	dots.forEach((dot, index) => {
 		dot.classList.remove("dot_selected");
 		/* "forEach", calls a function for each element in an array -
@@ -49,13 +49,13 @@ function showNext() {
 	currentSlide = (currentSlide + 1) % slides.length; //"%" used to manage the carousel loop
 	bannerText.innerHTML = slides[currentSlide].tagLine;
 	bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
-	activeDot();
+	updateActiveDot();
 }
   
 function showPrev() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   bannerText.innerHTML = slides[currentSlide].tagLine;
   bannerSlide.src = "./assets/images/slideshow/" + slides[currentSlide].image;
-  activeDot();
+  updateActiveDot();
 }
   
